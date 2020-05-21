@@ -29,20 +29,35 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                <table border = "1">
-<tr>
-<td>Id</td>
-<td>Name</td>
-<td>Email</td>
-</tr>
-@foreach ($register_users as $register_user)
-<tr>
-<td>{{ $register_user->register_id }}</td>
-<td>{{ $register_user->register_name  }}</td>
-<td>{{ $register_user->register_email  }}</td>
-</tr>
-@endforeach
-</table>
+ 
+
+                 <div class="form-input-content">
+                     <div class="card login-form mb-0">
+                         <div class="card-body pt-5">                               
+                            <h4 class="text-center mb-4">Register Users List</h4>
+                            <table border = "1">
+                                <tr>
+                                    <td><strong>Id</strong></td>
+                                    <td><strong>Name</strong></td>
+                                    <td><strong>Email</strong></td>
+                                    <td><strong>Action</strong></td>
+                                </tr>
+                                @foreach ($users as $user)
+                                <tr>
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->name  }}</td>
+                                    <td>{{ $user->email  }}</td>
+                                    <td><a href="./register-edit/user-{{ $user->id }}">Edit</a>|
+                                    <a href="./admin-users/user-{{ $user->id }}">Delete</a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </table>
+                       
+              
+        </div>
+    </div>
+</div> 
                 </div>
             </div>
         </div>

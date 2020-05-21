@@ -28,6 +28,7 @@
     <!--*******************
         Preloader end
     ********************-->
+    @include('frontend.partials.frontend-header')
 
     @yield('content')
     

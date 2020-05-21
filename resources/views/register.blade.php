@@ -7,24 +7,25 @@
                 <div class="col-xl-6">
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
-                            <div class="card-body pt-5">
-                                
+                            <div class="card-body pt-5">                               
                                 <h4 class="text-center">Register</h4>
-        
-                                <form class="mt-5 mb-5 login-input" method="POST" action="http://localhost/quixlab/public/register">
+                                <form class="mb-5 login-input" method="POST" action="http://localhost/quixlab/public/register">
                                    {{ csrf_field() }}
-                                    <div class="form-group">
-                                        <input type="text" class="form-control"  name="register_name" id="register_name" placeholder="Name" required>
+                                    <div class="form-group @if ($errors->has('name')) has-error @endif">
+                                        <input type="text" class="form-control"  name="name" id="name" placeholder="Name">
+                                        @if ($errors->has('name')) <p class="help-block">{{ $errors->first('name') }}</p> @endif
                                     </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control"  name="register_email" id="register_email" placeholder="Email" required>
+                                    <div class="form-group @if ($errors->has('email')) has-error @endif">
+                                        <input type="email" class="form-control"  name="email" id="email" placeholder="Email">
+                                        @if ($errors->has('email')) <p class="help-block">{{ $errors->first('email') }}</p> @endif
                                     </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control"  name="register_password" id="register_password" placeholder="Password" required>
+                                    <div class="form-group @if ($errors->has('password')) has-error @endif ">
+                                        <input type="password" class="form-control"  name="password" id="password" placeholder="Password">
+                                        @if ($errors->has('password')) <p class="help-block">{{ $errors->first('password') }}</p> @endif
                                     </div>
                                     <button class="btn login-form__btn submit w-100">Sign in</button>
                                 </form>
-                                    <p class="mt-5 login-form__footer">Have account <a href="page-login.html" class="text-primary">Sign Up </a> now</p>
+                                    <p class="mt-5 login-form__footer">Have account <a href="http://localhost/quixlab/public" class="text-primary">Sign Up </a> now</p>
                                     </p>
                                 </div>
                             </div>

@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use App\register;
+use App\User;
 
-class RegisterController extends Controller
-{
+class RegisterController extends Controller{
    
     public function create(){
 
@@ -16,16 +13,16 @@ class RegisterController extends Controller
 
     public function store()
     {
-        $this->validate(request(), [
-            'register_name' => 'required',
-            'register_email' => 'required|email',
-            'register_password' => 'required'
+        $this->validate(request(), [ 
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required'
         ]);
         
-        $user = register::create(request(['register_name', 'register_email', 'register_password']));
+        $users = User::create(request(['name', 'email', 'password']));
         
-        auth()->login($user);
-        
-        return redirect()->to('/register-listing');
+        auth()->login($users);
+          
+        return redirect()->back();
     }
 }

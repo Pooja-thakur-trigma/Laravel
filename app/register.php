@@ -11,7 +11,7 @@ class register extends Authenticatable{
     protected $primarykey = 'register_id';
 
     protected $fillable = [
-        'register_name', 'register_email', 'register_password',
+        'register_name', 'register_phone', 'register_address', 'register_email', 'register_password',
     ];
     
 }

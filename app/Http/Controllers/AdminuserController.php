@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 
 class AdminuserController extends Controller {
      public function index(){
-     $register_users = DB::select('select * from registers');
-     return view('admin-users',['register_users'=>$register_users]);
+     $users = DB::select('select * from users');
+     return view('admin-users',['users'=>$users]);
    }
 }
   
