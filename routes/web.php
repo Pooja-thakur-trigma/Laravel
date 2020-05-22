@@ -18,8 +18,8 @@ Route::get('/admin',function (){
 });
 
 Route::get('admin-users','AdminuserController@index'); 
-Route::get('/', 'RegisterController@create');
-Route::post('/', 'RegisterController@store');
+Route::get('/register', 'RegisterController@create');
+Route::post('register', 'RegisterController@store');
 
 Route::get('register-listing','RegisterlistingController@index'); 
 Route::get('register-edit/user-{register_id}','RegistereditController@show');
@@ -28,6 +28,6 @@ Route::get('delete-records','RegisterdeleteController@index');
 Route::get('register-listing/user-{register_id}','RegisterdeleteController@destroy'); 
 Route::get('admin-users/user-{register_id}','RegisterdeleteController@destroy'); 
 
-//Route::get('/', 'LoginController@create');
-//Route::post('/', 'LoginController@store');
+Route::get('/', 'LoginController@create');
+Route::post('/', 'LoginController@store');
 Route::get('/logout', 'LoginController@destroy');

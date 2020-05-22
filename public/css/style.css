@@ -16,14 +16,14 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 @import url(../icons/cryptocoins/css/cryptocoins.css);
 @import url(../icons/cryptocoins/css/cryptocoins-colors.css);
 @import url(../icons/linea-icons/linea.css);
-@import url(../icons/ionicons/css/ionicons.css);
+@import url(../icons/ionicons/css/ionicons.css); 
 @import url(../icons/themify-icons/themify-icons.css);
 @import url(../icons/flag-icon-css/flag-icon.min.css);
 @import url(../icons/material-design-iconic-font/materialdesignicons.min.css);
 @import url(../icons/pe-icon-set-weather/css/pe-icon-set-weather.min.css);
-@import url(http://localhost/quixlab/public/css/animate.min.css);
-@import url(http://localhost/quixlab/public/css/metisMenu.min.css);
-@import url(http://localhost/quixlab/public/css/bootstrap-select.min.css);
+@import url(../css/animate.min.css);
+@import url(../css/metisMenu.min.css);
+@import url(../css/bootstrap-select.min.css);
 .form-input-content table {
 	width: 100%;
 }
@@ -8203,7 +8203,6 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       .nk-sidebar .metismenu > li a > i {
         font-size: 0.95rem;
         display: inline-block;
-        vertical-align: middle;
         padding: 0 0.4375rem 0 0;
         color: #464a53; }
     .nk-sidebar .metismenu a {

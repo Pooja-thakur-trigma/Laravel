@@ -15,7 +15,7 @@
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Users</span>
+                            <i class="icon-user menu-icon"></i><span class="nav-text">Users</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="./admin-users">All Users</a></li>

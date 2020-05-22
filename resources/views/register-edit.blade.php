@@ -8,7 +8,7 @@
                  <div class="form-input-content">
                      <div class="card login-form mb-0">
                          <div class="card-body pt-5">                              
-                             <h4 class="text-center mb-4">Edit Your Account</h4>       
+                             <h4 class="text-center mb-4">Edit <strong><?php echo $users[0]->name; ?></strong> Account</h4>       
                                 <form class="mt-5 mb-5 login-input" method="POST" action="./user-<?php echo $users[0]->id; ?>">
                                     <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
                                     <div class="form-group @if ($errors->has('name')) has-error @endif">
@@ -24,6 +24,7 @@
                                          @if ($errors->has('password')) <p class="help-block">{{ $errors->first('password') }}</p> @endif
                                     </div>
                                     <button class="btn login-form__btn submit w-100">Update</button>
+                                    <p class="mt-5 login-form__footer"><a class="text-primary" href="../admin-users"><< Go to back</a></p>
                                 </form>
                          </div>
                     </div>

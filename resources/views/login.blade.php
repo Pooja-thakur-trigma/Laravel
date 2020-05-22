@@ -18,21 +18,20 @@
                                         @if ($errors->has('email')) <p class="help-block">{{ $errors->first('email') }}</p> @endif
                                     </div>
                                     <div class="form-group @if ($errors->has('password')) has-error @endif ">
-                                        <input type="password" class="form-control"  name="password" id="password" placeholder="Password">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                                         @if ($errors->has('password')) <p class="help-block">{{ $errors->first('password') }}</p> @endif
                                     </div>
-                                    @if(count($errors))
-                                        <div class="form-group">
-                                            <div class="alert alert-danger">
-                                                <ul>
-                                                    @foreach($errors->all() as $error)
-                                                        <li>{{$error}}</li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    @if ($alerterror = Session::get('alert-error'))
+	                                     <div class="alert alert-warning">
+	                                         	{{ $alerterror }}
+	                                      </div>
                                     @endif
-                                    <button class="btn login-form__btn submit w-100">Sign In</button>
+                                    @if ($alert = Session::get('alert-success'))
+	                                     <div class="alert alert-success">
+	                                         	{{ $alert }}
+	                                      </div>
+                                    @endif
+                                    <button type="submit" class="btn login-form__btn submit w-100">Sign In</button>
                                 </form>
                                 <p class="mt-5 login-form__footer">Dont have account? <a href="register" class="text-primary">Sign Up</a> now</p>
                             </div>
